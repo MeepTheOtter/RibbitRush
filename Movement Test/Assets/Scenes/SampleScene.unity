@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24883672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -262,9 +262,14 @@ MonoBehaviour:
   speed: 30
   gravity: {x: 0, y: 10, z: 0}
   jump: {x: 0, y: 50, z: 0}
-  floor: {fileID: 2024045684}
+  layersToInteractWith:
+    serializedVersion: 2
+    m_Bits: 256
   jumpJuice: 25
-  mult: 0.5
+  mult: 1
+  isGrounded: 0
+  hop: {x: 0, y: -5, z: 0}
+  maxSpeed: 10
 --- !u!120 &24883680
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -562,7 +567,7 @@ GameObject:
   - component: {fileID: 2024045686}
   - component: {fileID: 2024045685}
   - component: {fileID: 2024045689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,8 +641,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024045684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.631265, y: -2.08, z: 3.6969633}
-  m_LocalScale: {x: 50, y: 1, z: 50}
+  m_LocalPosition: {x: -11.631, y: -2.08, z: 3.697}
+  m_LocalScale: {x: 414.285, y: 1, z: 214.40999}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
