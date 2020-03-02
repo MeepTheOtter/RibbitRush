@@ -83,7 +83,7 @@ public class PowerUpController : MonoBehaviour
             {
                 iframes = 150;
                 hasShield = false;
-                rb.velocity += new Vector3(0, 18f, 0);
+                rb.velocity += new Vector3(0, 15f, 0);
             }
             else
             {

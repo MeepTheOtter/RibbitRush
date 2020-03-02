@@ -22,7 +22,7 @@ public class OnPlayerCollision : MonoBehaviour
     {
         if (checkDigit(player.value, collision.collider.gameObject.layer))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject.transform.Find("flower"));
         }
     }
 

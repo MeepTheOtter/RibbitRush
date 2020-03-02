@@ -54,7 +54,7 @@ public class InputMover : MonoBehaviour {
         {
             if (input.x != isMoving.x || input.z != isMoving.z)
             {
-                rb.velocity += new Vector3(0, 4f, 0);
+                rb.velocity += new Vector3(0, 6f, 0);
                 isGrounded = false;
                 //Debug.Log(input.z);
             }
