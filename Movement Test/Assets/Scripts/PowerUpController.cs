@@ -14,8 +14,8 @@ public class PowerUpController : MonoBehaviour
     public LayerMask flowerLayer;
     public LayerMask snakeLayer;
     public LayerMask waterLayer;
-    public float maxScale = 1.5f;
-    public float minScale = .5f;
+    public float maxScale = .75f;
+    public float minScale = .25f;
 
     public int iframes = 0;
 
