@@ -123,7 +123,9 @@ public class LevelMaker : MonoBehaviour
         var ENV = Instantiate(Env1, P1, Quaternion.identity);
         ENV.name = ("ENV" + PartNumber);
         P1.x -= 1.5f;
+        P1.y += 1;
         P2.x += 1.5f;
+        P2.y += 1f;
         Instantiate(Snack, P1, Quaternion.identity);
         ENV = Instantiate(Env1, P2, Quaternion.identity);
         ENV.name = ("ENV" + PartNumber);

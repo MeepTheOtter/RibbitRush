@@ -6,6 +6,7 @@ public class Attack : MonoBehaviour
 {
 
     GameObject Player;
+    Animator anim;
     Rigidbody rb;
 
     float counter = 500;
@@ -15,15 +16,16 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("MakerTarget");
         rb = gameObject.GetComponent<Rigidbody>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Distance = calcDistance();
-        if (Distance < 4 && counter > 500) Attak();
+        if (Distance < 7 && counter > 500) Attak();
         counter += 1f * Time.deltaTime;
     }
 
@@ -39,5 +41,6 @@ public class Attack : MonoBehaviour
         Vector3 S = (Player.transform.position - transform.position) * 200;
         rb.velocity += S * Time.deltaTime;
         counter = 0;
+        anim.SetTrigger("Yeet!");
     }
 }
