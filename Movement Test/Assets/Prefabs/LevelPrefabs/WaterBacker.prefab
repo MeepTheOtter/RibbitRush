@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 767698380303640453}
   - component: {fileID: 767698380303640452}
   - component: {fileID: 8951962106190811655}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WaterBacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

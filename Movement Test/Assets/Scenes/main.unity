@@ -156,7 +156,7 @@ MonoBehaviour:
   Env1: {fileID: 1722056869414479807, guid: 95065f327f0ab584a8a4775d7725760b, type: 3}
   Env2: {fileID: 3988354123028487822, guid: d8b87ca6920f3a641acd80eb62e89b01, type: 3}
   Wat: {fileID: 767698380303640455, guid: df269538e0cacde48b6667347a878891, type: 3}
-  player: {fileID: 7758990650045666074, guid: 4294a059549eb3f489b414d60bd0823a, type: 3}
+  player: {fileID: 2778560359532005819, guid: 1dc8f5fa2294bbe489745d397ae30dd2, type: 3}
   Target: {fileID: 735697738}
 --- !u!4 &482108479
 Transform:
@@ -415,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103650772}
   m_LocalRotation: {x: 0.28071728, y: -0, z: -0, w: 0.9597905}
-  m_LocalPosition: {x: -6.7, y: 14.55, z: -18.5}
+  m_LocalPosition: {x: -9.4, y: 14.55, z: -18.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

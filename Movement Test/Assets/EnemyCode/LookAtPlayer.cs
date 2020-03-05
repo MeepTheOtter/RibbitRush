@@ -10,13 +10,13 @@ public class LookAtPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("MakerTarget");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Quaternion rotation = Quaternion.LookRotation(-Player.transform.position, Player.transform.position);
+        Quaternion rotation = Quaternion.LookRotation(-Player.transform.position, Vector3.up);
         transform.rotation = rotation;
     }
 }

@@ -10,11 +10,10 @@ public class LevelMaker : MonoBehaviour
     public GameObject Env1;
     public GameObject Env2;
     public GameObject Wat;
-    public GameObject player;
-    GameObject Name;
-
+    public GameObject Snack;
     public Transform Target;
     private Vector3 Op;
+    public static Vector3 cameraLocation;
 
     // This is a value that is added to the prefab names so they can be selected easier
     public static int PartNumber = 1;
@@ -32,9 +31,9 @@ public class LevelMaker : MonoBehaviour
         // Spawns the initial chunk
         SpawnChunk();
         Op = Target.position;
-        Name = Instantiate(player, Target.position, Quaternion.identity);
-        Name.name = "player";
-        Target.parent = Name.transform;
+        cameraLocation = Target.position;
+        cameraLocation.z -= 20;
+
     }
 
     // Update is called once per frame
@@ -45,6 +44,8 @@ public class LevelMaker : MonoBehaviour
             SpawnChunk();
             Op = Target.position;
             Op.z += 10;
+            cameraLocation = Target.position;
+            cameraLocation.z -= 20;
         }
     }
 
@@ -53,9 +54,9 @@ public class LevelMaker : MonoBehaviour
     {
         float M = Random.Range(0.0f, 1.0f);
         int K = 0;
-        if (M <= 0.3f) K = 5;
-        if (M > 0.3f && M < 0.7f) K = 8;
-        if (M >= 0.7f) K = 10;
+        if (M <= 0.3f) K = 7;
+        if (M > 0.3f && M < 0.7f) K = 9;
+        if (M >= 0.7f) K = 11;
 
         for(int i = 0; i < K; i++)
         {
@@ -71,10 +72,12 @@ public class LevelMaker : MonoBehaviour
     // Spawns three sections side by side
     private void SpawnPart(Vector3 P, int i, int K)
     {
-        SpawnSection(P, 1.5f, i, K);
-        SpawnSection(P, 0, i, K);
-        SpawnSection(P, -1.5f, i, K);
-        SpawnEnv(P, 5, 1);
+        SpawnSection(P, 6f, i, K, 1);
+        SpawnSection(P, 3f, i, K, 2);
+        SpawnSection(P, 0, i, K, 3);
+        SpawnSection(P, -3f, i, K, 4);
+        SpawnSection(P, -6f, i, K, 5);
+        if (i % 2 == 0 || i == 0) SpawnEnv(P, 11, 1);
         if (i == 0)
         {
             P.z -= Zoffset;
@@ -90,7 +93,7 @@ public class LevelMaker : MonoBehaviour
 
     // Spawns individual sections of the level
     // it takes in a position and an x offset
-    private void SpawnSection(Vector3 Part, float offset, int i, int K)
+    private void SpawnSection(Vector3 Part, float offset, int i, int K, int T)
     {
         Vector3 P = Part;
         Vector3 B = P;
@@ -107,7 +110,7 @@ public class LevelMaker : MonoBehaviour
             End.name = ("END");
         }
         var Start = Instantiate(StartPoint, P, Quaternion.identity);
-        Start.name = ("Start" + PartNumber);
+        Start.name = ("Start" + PartNumber + T);
     }
 
     private void SpawnEnv(Vector3 Part, float Xoffset, float YOffset)
@@ -121,10 +124,17 @@ public class LevelMaker : MonoBehaviour
         P1.y += Yoffset;
         P2.y += Yoffset;
         D.y += Yoffset;
+        float C = Random.Range(0.0f, 1.0f);
         var ENV = Instantiate(Env1, P1, Quaternion.identity);
         ENV.name = ("ENV" + PartNumber);
+        P1.x -= 1.5f;
+        P1.y += 1;
+        P2.x += 1.5f;
+        P2.y += 1f;
+        Instantiate(Snack, P1, Quaternion.identity);
         ENV = Instantiate(Env1, P2, Quaternion.identity);
         ENV.name = ("ENV" + PartNumber);
+        Instantiate(Snack, P2, Quaternion.identity);
         ENV = Instantiate(Env2, D, Quaternion.identity);
         ENV.name = ("ENV" + PartNumber + " V2");
     }

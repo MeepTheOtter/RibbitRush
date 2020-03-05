@@ -10,12 +10,14 @@ public class PowerUpController : MonoBehaviour
 {
 
     Rigidbody rb;
+    flyCollision pd;
     public LayerMask bugLayer;
     public LayerMask flowerLayer;
     public LayerMask snakeLayer;
     public LayerMask waterLayer;
     public float maxScale = .75f;
     public float minScale = .25f;
+    public GameObject flyCollider;
 
     public int iframes = 0;
 
@@ -32,6 +34,7 @@ public class PowerUpController : MonoBehaviour
         hasShield = false;
         iframes = 0;
         rb = GetComponent<Rigidbody>();
+        pd = GetComponent<flyCollision>();
     }
 
     // Update is called once per frame
@@ -50,16 +53,25 @@ public class PowerUpController : MonoBehaviour
             isDead = true;
             transform.localScale = new Vector3(minScale, minScale, minScale);
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log(flyCollider.GetComponent<flyCollision>().isColliding);
+            if (flyCollider.GetComponent<flyCollision>().isColliding)
+            {
+                Debug.Log("did it");
+                eatFly();
+            }
+        }
     }
+
+    
 
     private void OnCollisionEnter(Collision collision)
     {
         //checks collision on the bug layer, increases size of frog. this is where to put animation stuffs and transitions
         if (checkDigit(bugLayer.value, collision.collider.gameObject.layer))
         {
-            Debug.Log("made it to bug");
-            playerState++;
-            transform.localScale += new Vector3(.5f, .5f, .5f);
+            eatFly();            
         }
         //checks collision on flower layer, turns shield on. shield then needs to interact with the water layer to determine if the frog dies or not.
         if (checkDigit(flowerLayer.value, collision.collider.gameObject.layer) && hasShield == false)
@@ -73,7 +85,7 @@ public class PowerUpController : MonoBehaviour
             Debug.Log("made it to snake");
             iframes = 150;
             playerState--;
-            transform.localScale -= new Vector3(.5f, .5f, .5f);
+            transform.localScale -= new Vector3(.25f, .25f, .25f);
         }
         //checks collision on the water layer, if the frog has the shield it gets launched into the air and it loses the shield, otherwise the frog dies and goes to it's death animation
         if (checkDigit(waterLayer.value, collision.collider.gameObject.layer) && iframes <= 40)
@@ -91,6 +103,13 @@ public class PowerUpController : MonoBehaviour
             }
         }
         //Debug.Log(collision.collider.gameObject.layer);
+    }
+
+    private void eatFly()
+    {
+        Debug.Log("made it to bug");
+        playerState++;
+        transform.localScale += new Vector3(.25f, .25f, .25f);
     }
 
     int setDigit(int bitfield, int n)
