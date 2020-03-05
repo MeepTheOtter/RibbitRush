@@ -156,6 +156,7 @@ MonoBehaviour:
   Env1: {fileID: 1722056869414479807, guid: 95065f327f0ab584a8a4775d7725760b, type: 3}
   Env2: {fileID: 3988354123028487822, guid: d8b87ca6920f3a641acd80eb62e89b01, type: 3}
   Wat: {fileID: 767698380303640455, guid: df269538e0cacde48b6667347a878891, type: 3}
+  Snack: {fileID: 4772552029657751393, guid: 0ead59c94f37ae64887e2846f8e6c0e2, type: 3}
   Target: {fileID: 735697738}
 --- !u!4 &482108479
 Transform:

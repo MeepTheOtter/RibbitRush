@@ -15,6 +15,9 @@ public class DestroyLog : MonoBehaviour
         if (gameObject.name == "END")
         {
             BC = gameObject.AddComponent<BoxCollider>();
+            Vector3 S = BC.transform.localScale;
+            S.x += 5;
+            BC.transform.localScale = S;
             rb = gameObject.AddComponent<Rigidbody>();
             BC.isTrigger = true;
             rb.isKinematic = true;
