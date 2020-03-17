@@ -12,49 +12,74 @@ public class ColorSwitcher : MonoBehaviour
     public Button PurpleButton;
     public Button BlackButton;
 
+    public static int C = 0;
+
     Material material;
     void Start()
     {
         GreenButton.onClick.AddListener(() =>
         {
-            material = Resources.Load<Material>("Material/FrogColorGreen");
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = material;
+            C = 0;
         });
         RedButton.onClick.AddListener(() =>
         {
-            material = Resources.Load<Material>("Material/FrogColorRed");
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = material;
+            C = 1;
         });
         YellowButton.onClick.AddListener(() =>
         {
-            material = Resources.Load<Material>("Material/FrogColorYellow");
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = material;
+            C = 2;
         });
         BlueButton.onClick.AddListener(() =>
         {
-            material = Resources.Load<Material>("Material/FrogColorBlue");
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = material;
+            C = 3;
         });
         PurpleButton.onClick.AddListener(() =>
         {
-            material = Resources.Load<Material>("Material/FrogColorPurple");
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = material;
+            C = 4;
         });
         BlackButton.onClick.AddListener(() =>
         {
-            material = Resources.Load<Material>("Material/FrogColorBlack");
-            Renderer rend = GetComponent<Renderer>();
-            rend.material = material;
+            C = 5;
         });
     }
     // Update is called once per frame
     void Update()
     {
-        
+        if (C == 0)
+        {
+            material = Resources.Load<Material>("Material/FrogColorGreen");
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = material;
+        }
+        if (C == 1)
+        {
+            material = Resources.Load<Material>("Material/FrogColorRed");
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = material;
+        }
+        if (C == 2)
+        {
+            material = Resources.Load<Material>("Material/FrogColorGold");
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = material;
+        }
+        if (C == 3)
+        {
+            material = Resources.Load<Material>("Material/FrogColorBlue");
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = material;
+        }
+        if (C == 4)
+        {
+            material = Resources.Load<Material>("Material/FrogColorPurple");
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = material;
+        }
+        if (C == 5)
+        {
+            material = Resources.Load<Material>("Material/FrogColorBlack");
+            Renderer rend = GetComponent<Renderer>();
+            rend.material = material;
+        }
     }
 }
