@@ -10,7 +10,7 @@ public class Attack : MonoBehaviour
     Rigidbody rb;
 
     float counter = 500;
-
+    bool isAttacking = false;
     float Distance = 0;
 
     // Start is called before the first frame update
@@ -19,13 +19,16 @@ public class Attack : MonoBehaviour
         Player = GameObject.Find("player");
         rb = gameObject.GetComponent<Rigidbody>();
         anim = gameObject.GetComponent<Animator>();
+        rb.velocity = Vector3.zero;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     // Update is called once per frame
     void Update()
     {
         Distance = calcDistance();
-        if (Distance < 7 && counter > 500) Attak();
+        if (!isAttacking) rb.velocity = Vector3.zero;
+        if (Distance < 4 && counter > 500) Attak();
         counter += 1f * Time.deltaTime;
     }
 
@@ -38,6 +41,8 @@ public class Attack : MonoBehaviour
 
     void Attak()
     {
+        isAttacking = true;
+        rb.constraints = RigidbodyConstraints.None;
         Vector3 S = (Player.transform.position - transform.position) * 200;
         rb.velocity += S * Time.deltaTime;
         counter = 0;

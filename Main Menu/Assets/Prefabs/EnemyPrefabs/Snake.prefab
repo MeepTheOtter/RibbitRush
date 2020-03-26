@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2380297709093969513}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Snake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,10 +96,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e93426a97ef7ce4498e53a933b28cc8d, type: 2}
+    - target: {fileID: -6288907929385596766, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 2ea98a5916f9f86498dab68b769ef371,
         type: 3}
       propertyPath: m_Controller
       value: 
+      objectReference: {fileID: 9100000, guid: 48164a6f370ba164da7671b416d6f6de, type: 2}
+    - target: {fileID: -4804485508685230771, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2ea98a5916f9f86498dab68b769ef371,
         type: 3}
@@ -171,21 +181,76 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.07868
       objectReference: {fileID: 0}
+    - target: {fileID: -2343002672903348754, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 2ea98a5916f9f86498dab68b769ef371,
         type: 3}
       propertyPath: m_Name
       value: SnakeIdle
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 129350255495253916, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502203975881118265, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880936574994235004, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4328988315555784451, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5085544327347355916, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5840255483787996955, guid: 2ea98a5916f9f86498dab68b769ef371,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0ec9009eedd563145b632795202046c0, type: 2}
+    - target: {fileID: 7586055287445417022, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7702732181415879588, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977819192417808284, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8368854879943276990, guid: 2ea98a5916f9f86498dab68b769ef371,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0b8731515415388409620fe36d98c091, type: 2}
+    - target: {fileID: 9027124049610543990, guid: 2ea98a5916f9f86498dab68b769ef371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ea98a5916f9f86498dab68b769ef371, type: 3}
 --- !u!1 &8114177991162716771 stripped

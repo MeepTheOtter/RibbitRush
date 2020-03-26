@@ -113,6 +113,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   continueSpawn: {fileID: 0}
+  Section1: {fileID: 0}
+  Section2: {fileID: 0}
+  Section3: {fileID: 0}
+  Section4: {fileID: 0}
+  Section5: {fileID: 0}
+  Section6: {fileID: 0}
+  Section7: {fileID: 0}
+  Section8: {fileID: 0}
+  Section9: {fileID: 0}
+  Section10: {fileID: 0}
   waterfallSpawn: {fileID: 0}
   playerRef: {fileID: 4006894144835929627, guid: 1dc8f5fa2294bbe489745d397ae30dd2,
     type: 3}
@@ -1925,7 +1935,7 @@ PrefabInstance:
     - target: {fileID: 3988354123028487826, guid: d8b87ca6920f3a641acd80eb62e89b01,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 119
+      value: 118.73
       objectReference: {fileID: 0}
     - target: {fileID: 3988354123028487826, guid: d8b87ca6920f3a641acd80eb62e89b01,
         type: 3}

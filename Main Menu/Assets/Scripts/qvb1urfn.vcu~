@@ -1,0 +1,83 @@
+﻿// Ribbit Rush-
+// a script to move the frog around
+// Copyright Team Nine 2020
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class InputMover : MonoBehaviour
+{
+
+
+    InputManager.InputConfig playerController;
+    Rigidbody rb;
+
+
+    float speed = 40f; // controls the speed the frog moves
+    public Vector3 gravity = new Vector3(0, 10, 0); // affects the y axis downward
+    public Vector3 jump = new Vector3(0, 50, 0); // affects the y axis upward when the jump command is issued
+    private Vector3 input;
+    public Vector3 newOffset = new Vector3(1, 0, 6);
+
+    public LayerMask layersToInteractWith;
+
+    //public int jumpJuice = 6; // controls how much jump the frog can do
+    public float mult; // a multiplier for the jump command
+    public bool isGrounded; // true, frog is on the ground. false, frog is not on the ground
+    public bool isJumping; // used to determine if the frog is jumping or not
+    private bool hasJumped;
+    private Vector3 isMoving = new Vector3(0, 0, 0); // compared to the frogs current movement to determine if the frog is moving
+    public Vector3 hop = new Vector3(0, -5, 0); // affects the y axis upward only while moving
+    public int maxSpeed = 30; //  the max speed the frog can move
+    public int hopTimer = 0;
+
+    float X = 0;
+    float Y = 0;
+    float Z = 0;
+    float G = -10;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+    void Update()
+    {
+        // locks rotation of character
+        // rb.constraints = RigidbodyConstraints.FreezeRotation;
+        // checks input from the player
+        input.x = Input.GetAxis("Horizontal");
+        input.z = Input.GetAxis("Vertical");
+
+        X += speed * Time.deltaTime * input.x;
+        Z += speed * Time.deltaTime * input.z;
+
+        if (!isJumping && Input.GetAxis("Jump")) Y += 50;
+
+        Y += G * Time.deltaTime;
+
+        // Update velocity of object
+        rb.velocity = new Vector3( X, Y, Z);
+    }
+
+    // triggered when a gameobject collides with the frog
+    private void OnCollisionEnter(Collision collision)
+    { // checks if the collision object matches the floor layer, sets isGrounded to true and resets jumpJuice if they match
+        if (checkDigit(layersToInteractWith.value, collision.collider.gameObject.layer))
+        {
+            isGrounded = true;
+            isJumping = false;
+            //jumpJuice = 25;
+        }
+    }
+
+    int setDigit(int bitfield, int n)
+    {
+        return (1 << n) | bitfield;
+    }
+
+    bool checkDigit(int bitfield, int n)
+    {
+        return ((bitfield >> n) & 1) == 1;
+    }
+}
